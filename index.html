@@ -35,22 +35,22 @@
        <nav>
     <ul>
 		<li><a href="#top" onmouseover="playclip();" >Top</a></li>
-		<li><button class="tablinks" onclick="openT(event,'N')"><a href="#national" onmouseover="playclip();">National</a></button></li>
-		<li><button class="tablinks" onclick="openT(event, 'R')"><a href="#regional" onmouseover="playclip();">Regional</a></button></li>
-		<li><button class="tablinks" onclick="openT(event, 'S')"><a href="#state" onmouseover="playclip();">State-Level</a></button></li>
+		<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'N')"><a href="#national" onmouseover="playclip();">National</a></button></li>
+		<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event, 'R')"><a href="#regional" onmouseover="playclip();">Regional</a></button></li>
+		<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event, 'S')"><a href="#state" onmouseover="playclip();">State-Level</a></button></li>
     <ul>
         </nav>
     </header>
 <body>
     <h1 class="title"  <h1 class="title" onmouseover="responsiveVoice.speak('Educational Attainment in the United States');" onmouseleave="responsiveVoice.cancel();" >Educational Attainment in the United States</h1>
         
-	<div id="N" class="tabcontent" style="cursor: pointer">
+	<div id="N" class="tabcontent">
 	<p><br></p>
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Nation-Wide Education Level of Population in Schooling');" onmouseleave="responsiveVoice.cancel();" >Nation-Wide Education Level of Population in Schooling</h2>
 	
     <svg id="pie-chart" width="960" height="450"></svg><a name="regional"></a>
 	</div>
-	<div id="R" class="tabcontent" style="cursor: pointer">
+	<div id="R" class="tabcontent">
     <p><br><br><br></p>
      <h2 class="subtitle" onmouseover="responsiveVoice.speak('Educational Attainment: Region-level Breakdown of University Students');" onmouseleave="responsiveVoice.cancel();">Educational Attainment: Region-level Breakdown of University Students</h2>
 	
@@ -71,7 +71,7 @@
 	<a name="state"></a>
     <p><br><br></p>
 	</div>
-	<div id="S" class="tabcontent" style="cursor: pointer">
+	<div id="S" class="tabcontent">
    <h2 class="subtitle" onmouseover="responsiveVoice.speak('Education Level of Population in Schooling: State-level Breakdown');" onmouseleave="responsiveVoice.cancel();">Education Level of Population in Schooling: State-level Breakdown</h2>
 	
     <form id="stack-form">
