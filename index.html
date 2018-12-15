@@ -31,45 +31,44 @@
 		}
 	</script>
 </head>
-  <header>
-    <nav>
-    <ul>
-		<li><a href="#top" onmouseover="playclip();" >Top</a></li>
-		<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'N')"><a href="#national" onmouseover="playclip();">National</a></button></li>
-		<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'R')"><a href="#regional" onmouseover="playclip();">Regional</a></button></li>
-		<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'S')"><a href="#state" onmouseover="playclip();">State-Level</a></button></li>
-    <ul>
-    </nav>
-  </header>
+<header>
+	<nav>
+	<ul>
+	<li><a href="#top" onmouseover="playclip();" >Top</a></li>
+	<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'N')"><a href="#national" onmouseover="playclip();">National</a></button></li>
+	<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'R')"><a href="#regional" onmouseover="playclip();">Regional</a></button></li>
+	<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'S')"><a href="#state" onmouseover="playclip();">State-Level</a></button></li>
+	<ul>
+	</nav>
+</header>
 <body>
   <h1 class="title"  <h1 class="title" onmouseover="responsiveVoice.speak('Educational Attainment in the United States');" onmouseleave="responsiveVoice.cancel();" >Educational Attainment in the United States</h1>
 
 	<div id="N" class="tabcontent">
-		
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Nation-Wide Education Level of Population in Schooling');" onmouseleave="responsiveVoice.cancel();" >Nation-Wide Education Level of Population in Schooling</h2>
+    <svg id="pie-chart" width="960" height="450"></svg>
+	</div>
+	<div id="R" class="tabcontent">
+		<a name="regional"></a>
+		<h2 class="subtitle" onmouseover="responsiveVoice.speak('Educational Attainment: Region-level Breakdown of University Students');" onmouseleave="responsiveVoice.cancel();">Educational Attainment: Region-level Breakdown of University Students</h2>
 	
-    <svg id="pie-chart" width="960" height="450"></svg></div><div id="R" class="tabcontent"><a name="regional"></a>
+		<form id="tree-form">
+			<div class="radio-toolbar">
+				<input type="radio" id="mode1" name="treeSum" value="number" checked>
+				<label for="mode1" onmouseover="responsiveVoice.speak('Pursuing a Masters degree (in number of students)');" onmouseleave="responsiveVoice.cancel();">Pursuing a Masters degree (in # of students)</label>
+				<input type="radio" id="mode2" name="treeSum" value="percent">
+				<label for="mode2" onmouseover="responsiveVoice.speak('Pursuing a Masters degree (in percentage)');" onmouseleave="responsiveVoice.cancel();">Pursuing a Masters degree (in %)</label>
+				<input type="radio" id="mode3" name="treeSum" value="male">
+				<label for="mode3" onmouseover="responsiveVoice.speak('Males in College (18-24yrs)(in percentage)');" onmouseleave="responsiveVoice.cancel();">Males in College (18-24yrs)(in %)</label>
+				<input type="radio" id="mode4" name="treeSum" value="femal">
+				<label for="mode4" onmouseover="responsiveVoice.speak('Females in College (18-24yrs) (in percentage)');" onmouseleave="responsiveVoice.cancel();">Females in College (18-24yrs) (in %)</label>
+			</div>
+		</form>
+		<div id="chart"></div>
+	</div>
 	
-	
-  <h2 class="subtitle" onmouseover="responsiveVoice.speak('Educational Attainment: Region-level Breakdown of University Students');" onmouseleave="responsiveVoice.cancel();">Educational Attainment: Region-level Breakdown of University Students</h2>
-	
-  <form id="tree-form">
-		<div class="radio-toolbar">
-			<input type="radio" id="mode1" name="treeSum" value="number" checked>
-			<label for="mode1" onmouseover="responsiveVoice.speak('Pursuing a Masters degree (in number of students)');" onmouseleave="responsiveVoice.cancel();">Pursuing a Masters degree (in # of students)</label>
-			<input type="radio" id="mode2" name="treeSum" value="percent">
-      <label for="mode2" onmouseover="responsiveVoice.speak('Pursuing a Masters degree (in percentage)');" onmouseleave="responsiveVoice.cancel();">Pursuing a Masters degree (in %)</label>
-      <input type="radio" id="mode3" name="treeSum" value="male">
-      <label for="mode3" onmouseover="responsiveVoice.speak('Males in College (18-24yrs)(in percentage)');" onmouseleave="responsiveVoice.cancel();">Males in College (18-24yrs)(in %)</label>
-      <input type="radio" id="mode4" name="treeSum" value="femal">
-      <label for="mode4" onmouseover="responsiveVoice.speak('Females in College (18-24yrs) (in percentage)');" onmouseleave="responsiveVoice.cancel();">Females in College (18-24yrs) (in %)</label>
-    </div>
-  </form>
-	
-  <div id="chart"></div>
-	    </div>	
 	<div id="S" class="tabcontent">
-	<a name="state"></a>
+		<a name="state"></a>
 		<h2 class="subtitle" onmouseover="responsiveVoice.speak('Education Level of Population in Schooling: State-level Breakdown');" onmouseleave="responsiveVoice.cancel();">Education Level of Population in Schooling: State-level Breakdown</h2>
 		<form id="stack-form">
 			<div class="radio-toolbar">
