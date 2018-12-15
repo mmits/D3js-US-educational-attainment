@@ -33,7 +33,7 @@ var parse = d3.time.format("%Y").parse;
 
 
 // Transpose the data into layers
-var dataset = d3.layout.stack()(["redDelicious", "mcintosh", "oranges", "pears"].map(function(fruit) {
+var dataset = d3.layout.stack()(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"].map(function(fruit) {
   return data.map(function(d) {
     return {x: parse(d.year), y: +d[fruit]};
   });
@@ -49,7 +49,7 @@ var y = d3.scale.linear()
   .domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; });  })])
   .range([height, 0]);
 
-var colors = ["b33040", "#d25c4d", "#f2b447", "#d9d574"];
+var colors = ["#b33040", "#d25c4d", "#f2b447", "#d9d574", "#b33040", "#d25c4d", "#f2b447", "#d9d574", "#b33040", "#d25c4d", "#f2b447", "#d9d574", "#b33040", "#d25c4d", "#f2b447"];
 
 
 // Define and draw axes
@@ -120,10 +120,21 @@ legend.append("text")
   .style("text-anchor", "start")
   .text(function(d, i) { 
     switch (i) {
-      case 0: return "Anjou pears";
-      case 1: return "Naval oranges";
-      case 2: return "McIntosh apples";
-      case 3: return "Red Delicious apples";
+      case 0: return "A";
+      case 1: return "B";
+      case 2: return "C";
+      case 3: return "D";
+      case 4: return "E";
+      case 5: return "F";
+      case 6: return "G";
+      case 7: return "H";
+      case 8: return "I";
+      case 9: return "J";
+      case 10: return "K";
+      case 11: return "L";
+      case 12: return "M";
+      case 13: return "N";
+      case 14: return "O";
     }
   });
 
