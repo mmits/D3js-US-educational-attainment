@@ -11,7 +11,7 @@ var margin = { top: 50, right: 0, bottom: 100, left: 30 },
 	times = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12a", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p", "12p"];
 	datasets = ["data.tsv", "data2.tsv"];
 
-var svg = d3.select("#chart").append("svg")
+var svg = d3.select("#heat").append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
 	.append("g")
