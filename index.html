@@ -46,40 +46,19 @@
 
 	<div id="N" class="tabcontent">
     <h2 class="subtitle" onmouseover="responsiveVoice.speak('Nation-Wide Education Level of Population in Schooling');" onmouseleave="responsiveVoice.cancel();" >Nation-Wide Education Level of Population in Schooling</h2>
-    <svg id="body" width="960" height="500"></svg>
+    <svg id="stacked" width="960" height="500"></svg>
 	</div>
 	<div id="R" class="tabcontent">
 		<a name="regional"></a>
 		<h2 class="subtitle" onmouseover="responsiveVoice.speak('Educational Attainment: Region-level Breakdown of University Students');" onmouseleave="responsiveVoice.cancel();">Educational Attainment: Region-level Breakdown of University Students</h2>
-		
-		<form id="tree-form">
-			<div class="radio-toolbar">
-				<input type="radio" id="mode1" name="treeSum" value="number" checked>
-				<label for="mode1" onmouseover="responsiveVoice.speak('Pursuing a Masters degree (in number of students)');" onmouseleave="responsiveVoice.cancel();">Pursuing a Masters degree (in # of students)</label>
-				<input type="radio" id="mode2" name="treeSum" value="percent">
-				<label for="mode2" onmouseover="responsiveVoice.speak('Pursuing a Masters degree (in percentage)');" onmouseleave="responsiveVoice.cancel();">Pursuing a Masters degree (in %)</label>
-				<input type="radio" id="mode3" name="treeSum" value="male">
-				<label for="mode3" onmouseover="responsiveVoice.speak('Males in College (18-24yrs)(in percentage)');" onmouseleave="responsiveVoice.cancel();">Males in College (18-24yrs)(in %)</label>
-				<input type="radio" id="mode4" name="treeSum" value="femal">
-				<label for="mode4" onmouseover="responsiveVoice.speak('Females in College (18-24yrs) (in percentage)');" onmouseleave="responsiveVoice.cancel();">Females in College (18-24yrs) (in %)</label>
-			</div>
-		</form>
-		<div id="chart"></div>
+		<div id="heat"></div>
 	</div>
 	
 	<div id="S" class="tabcontent">
 		<a name="state"></a>
 		<h2 class="subtitle" onmouseover="responsiveVoice.speak('Education Level of Population in Schooling: State-level Breakdown');" onmouseleave="responsiveVoice.cancel();">Education Level of Population in Schooling: State-level Breakdown</h2>
-		<form id="stack-form">
-			<div class="radio-toolbar">
-				<input type="radio" id="radio1" name="mode" value="bypercent" checked>
-				<label for="radio1" onmouseover="responsiveVoice.speak('Students (in percentage)');" onmouseleave="responsiveVoice.cancel();">Students (in %)</label>
-				<input type="radio" id="radio2" name="mode" value="bycount">
-				<label for="radio2" onmouseover="responsiveVoice.speak('Students (in number of people)');" onmouseleave="responsiveVoice.cancel();">Students (in number of people)</label>
-			</div>
-    </form>
     <div>
-      <svg id="stacked-bar-chart"></svg>
+			<svg id="slices" width="500" height="500"></svg>
     </div>
 	</div>
 
@@ -88,6 +67,7 @@
 <script src="assets/scripts/script_4.js"></script>
 <script src="assets/scripts/script_5.js"></script>
 <script src="assets/scripts/script_6.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script src="data.js"></script>
 <script>
   $( document ).ready(function() {
