@@ -1,6 +1,6 @@
 // Setup svg using Bostock's margin convention
 //Stacked bar chart from: http://bl.ocks.org/mstanaland/6100713
-var margin = {top: 20, right: 160, bottom: 35, left: 30};
+var margin = {top: 10, right: 10, bottom: 10, left: 10};
 
 var width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
