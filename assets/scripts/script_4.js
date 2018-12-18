@@ -16,24 +16,24 @@ var svg = d3.select("#stacked")
 /* Data in strings like it would be if imported from a csv */
 
 var data = [
-  { year: "2006", redDelicious: "10", mcintosh: "15", oranges: "9", pears: "6" },
-  { year: "2007", redDelicious: "12", mcintosh: "18", oranges: "9", pears: "4" },
-  { year: "2008", redDelicious: "05", mcintosh: "20", oranges: "8", pears: "2" },
-  { year: "2009", redDelicious: "01", mcintosh: "15", oranges: "5", pears: "4" },
-  { year: "2010", redDelicious: "02", mcintosh: "10", oranges: "4", pears: "2" },
-  { year: "2011", redDelicious: "03", mcintosh: "12", oranges: "6", pears: "3" },
-  { year: "2012", redDelicious: "04", mcintosh: "15", oranges: "8", pears: "1" },
-  { year: "2013", redDelicious: "06", mcintosh: "11", oranges: "9", pears: "4" },
-  { year: "2014", redDelicious: "10", mcintosh: "13", oranges: "9", pears: "5" },
-  { year: "2015", redDelicious: "16", mcintosh: "19", oranges: "6", pears: "9" },
-  { year: "2016", redDelicious: "19", mcintosh: "17", oranges: "5", pears: "7" },
+  { year: "2006", A: "10", B: "15", C: "9", D: "6" },
+  { year: "2007", A: "12", B: "18", C: "9", D: "4" },
+  { year: "2008", A: "05", B: "20", C: "8", D: "2" },
+  { year: "2009", A: "01", B: "15", C: "5", D: "4" },
+  { year: "2010", A: "02", B: "10", C: "4", D: "2" },
+  { year: "2011", A: "03", B: "12", C: "6", D: "3" },
+  { year: "2012", A: "04", B: "15", C: "8", D: "1" },
+  { year: "2013", A: "06", B: "11", C: "9", D: "4" },
+  { year: "2014", A: "10", B: "13", C: "9", D: "5" },
+  { year: "2015", A: "16", B: "19", C: "6", D: "9" },
+  { year: "2016", A: "19", B: "17", C: "5", D: "7" },
 ];
 
 var parse = d3.time.format("%Y").parse;
 
 
 // Transpose the data into layers
-var dataset = d3.layout.stack()(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"].map(function(fruit) {
+var dataset = d3.layout.stack()(["A", "B", "C", "D"].map(function(fruit) {
   return data.map(function(d) {
     return {x: parse(d.year), y: +d[fruit]};
   });
@@ -49,7 +49,7 @@ var y = d3.scale.linear()
   .domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; });  })])
   .range([height, 0]);
 
-var colors = ["#b33040", "#d25c4d", "#f2b447", "#d9d574", "#b33040", "#d25c4d", "#f2b447", "#d9d574", "#b33040", "#d25c4d", "#f2b447", "#d9d574", "#b33040", "#d25c4d", "#f2b447"];
+var colors = ["#b33040", "#d25c4d", "#f2b447", "#d9d574"];
 
 
 // Define and draw axes
@@ -124,17 +124,6 @@ legend.append("text")
       case 1: return "B";
       case 2: return "C";
       case 3: return "D";
-      case 4: return "E";
-      case 5: return "F";
-      case 6: return "G";
-      case 7: return "H";
-      case 8: return "I";
-      case 9: return "J";
-      case 10: return "K";
-      case 11: return "L";
-      case 12: return "M";
-      case 13: return "N";
-      case 14: return "O";
     }
   });
 
