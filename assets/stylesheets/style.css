@@ -367,8 +367,13 @@ form {
 }
 
 /*Script 4*/
+svg {
+    font: 10px sans-serif;
+    shape-rendering: crispEdges;
+  }
+
 text.mono {
-	font-size: 9pt;
+	font-size: 9px;
   font-family: Consolas, courier;
   fill: #aaa;
 }
