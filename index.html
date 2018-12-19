@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
@@ -15,15 +15,32 @@
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script type="text/javascript" src="mouse.js"></script>
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	
+		<script>
+			function openT(evt, tabName) {
+				var i, tabcontent, tablinks;
+				tabcontent = document.getElementsByClassName("tabcontent");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
+				tablinks = document.getElementsByClassName("tablinks");
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active", "");
+				}
+				document.getElementById(tabName).style.display = "block";
+				evt.currentTarget.className += " active";
+			}
+		</script>
 </head>
   <header>
        <nav>
     <ul>
-      <li><a href="#top" onmouseover="playclip();" >Top</a></li>
-      <li><a href="#national" onmouseover="playclip();" >National</a></li>
-      <li><a href="#regional" onmouseover="playclip();">Regional</a></li>
-      <li><a href="#state" onmouseover="playclip();">State-Level</a></li>
-    <ul>
+      <li><button class="tablinks" style="cursor:pointer;"><a href="#top" onmouseover="playclip();">Top</a></li>
+			<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'N')" onmouseover="playclip();">National</button></li>
+			<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'R')" onmouseover="playclip();">Regional</button></li>
+			<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'S')" onmouseover="playclip();">State-Level</button></li>
+    	<li><button class="tablinks" style="cursor:pointer;"><a href="index2.html" onmouseover="playclip();">More Graphs</a></button></li>
+			<ul>
         </nav>
     </header>
 <body>
