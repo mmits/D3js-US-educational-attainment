@@ -35,28 +35,29 @@
 	<nav>
 	<ul>
 	<li><button class="tablinks" style="cursor:pointer;"><a href="#top" onmouseover="playclip();">Top</a></li>
-	<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'N')" onmouseover="playclip();">National</button></li>
-	<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'R')" onmouseover="playclip();">Regional</button></li>
-	<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'S')" onmouseover="playclip();">State-Level</button></li>
-	<ul>
+	<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'P')" onmouseover="playclip();">Population</button></li>
+	<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'E')" onmouseover="playclip();">Education Level</button></li>
+	<li><button class="tablinks" style="cursor:pointer;" onclick="openT(event,'U')" onmouseover="playclip();">Unemployment</button></li>
+	<li><button class="tablinks" style="cursor:pointer;"><a href="index.html" onmouseover="playclip();">Back</a></button></li>
+		<ul>
 	</nav>
 </header>
 <body>
-  <h1 class="title"  <h1 class="title" onmouseover="responsiveVoice.speak('Educational Attainment in the United States');" onmouseleave="responsiveVoice.cancel();" >Educational Attainment in the United States</h1>
+  <h1 class="title"  <h1 class="title" onmouseover="responsiveVoice.speak('New Graphs');" onmouseleave="responsiveVoice.cancel();" >New Graphs (Greece)</h1>
 
-	<div id="N" class="tabcontent">
-    <h2 class="subtitle" onmouseover="responsiveVoice.speak('Nation-Wide Education Level of Population in Schooling');" onmouseleave="responsiveVoice.cancel();" >Nation-Wide Education Level of Population in Schooling</h2>
+	<div id="P" class="tabcontent">
+    <h2 class="subtitle" onmouseover="responsiveVoice.speak('Nation-Wide Education Level of Population in Schooling');" onmouseleave="responsiveVoice.cancel();" >Population by Region</h2>
     <svg id="stacked" width="960" height="500"></svg>
 	</div>
-	<div id="R" class="tabcontent">
+	<div id="E" class="tabcontent">
 		<a name="regional"></a>
-		<h2 class="subtitle" onmouseover="responsiveVoice.speak('Educational Attainment: Region-level Breakdown of University Students');" onmouseleave="responsiveVoice.cancel();">Educational Attainment: Region-level Breakdown of University Students</h2>
+		<h2 class="subtitle" onmouseover="responsiveVoice.speak('Educational Attainment: Region-level Breakdown of University Students');" onmouseleave="responsiveVoice.cancel();">Population by Education Level</h2>
 		<div id="heat"></div>
 	</div>
 	
-	<div id="S" class="tabcontent">
+	<div id="U" class="tabcontent">
 		<a name="state"></a>
-		<h2 class="subtitle" onmouseover="responsiveVoice.speak('Education Level of Population in Schooling: State-level Breakdown');" onmouseleave="responsiveVoice.cancel();">Education Level of Population in Schooling: State-level Breakdown</h2>
+		<h2 class="subtitle" onmouseover="responsiveVoice.speak('Education Level of Population in Schooling: State-level Breakdown');" onmouseleave="responsiveVoice.cancel();">Unemployment by Quarter</h2>
     <div>
 			<svg id="slices" width="500" height="500"></svg>
     </div>
