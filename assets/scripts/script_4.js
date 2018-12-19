@@ -16,17 +16,19 @@ var svg = d3.select("#stacked")
 /* Data in strings like it would be if imported from a csv */
 
 var data = [
-  { year: "2006", A: "10", B: "15", C: "9", D: "6" },
-  { year: "2007", A: "12", B: "18", C: "9", D: "4" },
-  { year: "2008", A: "05", B: "20", C: "8", D: "2" },
-  { year: "2009", A: "01", B: "15", C: "5", D: "4" },
-  { year: "2010", A: "02", B: "10", C: "4", D: "2" },
-  { year: "2011", A: "03", B: "12", C: "6", D: "3" },
-  { year: "2012", A: "04", B: "15", C: "8", D: "1" },
-  { year: "2013", A: "06", B: "11", C: "9", D: "4" },
-  { year: "2014", A: "10", B: "13", C: "9", D: "5" },
-  { year: "2015", A: "16", B: "19", C: "6", D: "9" },
-  { year: "2016", A: "19", B: "17", C: "5", D: "7" },
+  { region: "Eastern Macedonia and Thrace", A: "10", B: "15", C: "9", D: "6" },
+  { region: "Central Macedonia", A: "12", B: "18", C: "9", D: "4" },
+  { region: "Western Macedonia", A: "05", B: "20", C: "8", D: "2" },
+  { region: "Epirus", A: "01", B: "15", C: "5", D: "4" },
+  { region: "Thessaly", A: "02", B: "10", C: "4", D: "2" },
+  { region: "Central Greece", A: "03", B: "12", C: "6", D: "3" },
+  { region: "Ionian Islands", A: "04", B: "15", C: "8", D: "1" },
+  { region: "Western Greece", A: "06", B: "11", C: "9", D: "4" },
+  { region: "Peloponnese", A: "10", B: "13", C: "9", D: "5" },
+  { region: "Attica", A: "16", B: "19", C: "6", D: "9" },
+  { region: "Northern Aegean", A: "19", B: "17", C: "5", D: "7" },
+  { region: "Southern Aegean", A: "19", B: "17", C: "5", D: "7" },
+  { region: "Crete", A: "19", B: "17", C: "5", D: "7" },
 ];
 
 var parse = d3.time.format("%Y").parse;
@@ -35,7 +37,7 @@ var parse = d3.time.format("%Y").parse;
 // Transpose the data into layers
 var dataset = d3.layout.stack()(["A", "B", "C", "D"].map(function(fruit) {
   return data.map(function(d) {
-    return {x: parse(d.year), y: +d[fruit]};
+    return {x: parse(d.region), y: +d[fruit]};
   });
 }));
 
@@ -43,7 +45,7 @@ var dataset = d3.layout.stack()(["A", "B", "C", "D"].map(function(fruit) {
 // Set x, y and colors
 var x = d3.scale.ordinal()
   .domain(dataset[0].map(function(d) { return d.x; }))
-  .rangeRoundBands([10, width-10], 0.02);
+  .rangeRoundBands([13, width-13], 0.02);
 
 var y = d3.scale.linear()
   .domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; });  })])
@@ -120,10 +122,15 @@ legend.append("text")
   .style("text-anchor", "start")
   .text(function(d, i) { 
     switch (i) {
-      case 0: return "A";
-      case 1: return "B";
-      case 2: return "C";
-      case 3: return "D";
+      case 0: return "ages 0-9";
+      case 1: return "ages 10-19";
+      case 2: return "ages 20-29";
+      case 3: return "ages 30-39";
+      case 4: return "ages 40-49";
+      case 5: return "ages 50-59";
+      case 6: return "ages 60-69";
+      case 6: return "ages 70-79";
+      case 7: return "ages 80+";
     }
   });
 
