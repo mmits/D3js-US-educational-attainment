@@ -135,18 +135,22 @@ var svg = d3.select("body")
 /* Data in strings like it would be if imported from a csv */
 
 var data = [
-  { year: "2006", redDelicious: "10", mcintosh: "15", oranges: "9", pears: "6", lemons: "1" },
-  { year: "2007", redDelicious: "12", mcintosh: "18", oranges: "9", pears: "4", lemons: "1" },
-  { year: "2008", redDelicious: "05", mcintosh: "20", oranges: "8", pears: "2", lemons: "1" },
-  { year: "2009", redDelicious: "01", mcintosh: "15", oranges: "5", pears: "4", lemons: "1" },
-  { year: "2010", redDelicious: "02", mcintosh: "10", oranges: "4", pears: "2", lemons: "1" },
-  { year: "2011", redDelicious: "03", mcintosh: "12", oranges: "6", pears: "3", lemons: "1" },
-  { year: "2012", redDelicious: "04", mcintosh: "15", oranges: "8", pears: "1", lemons: "1" },
-  { year: "2013", redDelicious: "06", mcintosh: "11", oranges: "9", pears: "4", lemons: "1" },
-  { year: "2014", redDelicious: "10", mcintosh: "13", oranges: "9", pears: "5", lemons: "1" },
-  { year: "2015", redDelicious: "16", mcintosh: "19", oranges: "6", pears: "9", lemons: "1" },
-  { year: "2016", redDelicious: "19", mcintosh: "17", oranges: "5", pears: "7", lemons: "1" },
-  { year: "2017", redDelicious: "6", mcintosh: "12", oranges: "1", pears: "3", lemons: "1" },
+  { year: "A", redDelicious: "10", mcintosh: "15", oranges: "9", pears: "6", lemons: "1" },
+  { year: "B", redDelicious: "12", mcintosh: "18", oranges: "9", pears: "4", lemons: "1" },
+  { year: "C", redDelicious: "05", mcintosh: "20", oranges: "8", pears: "2", lemons: "1" },
+  { year: "D", redDelicious: "01", mcintosh: "15", oranges: "5", pears: "4", lemons: "1" },
+  { year: "E", redDelicious: "02", mcintosh: "10", oranges: "4", pears: "2", lemons: "1" },
+  { year: "F", redDelicious: "03", mcintosh: "12", oranges: "6", pears: "3", lemons: "1" },
+  { year: "G", redDelicious: "04", mcintosh: "15", oranges: "8", pears: "1", lemons: "1" },
+  { year: "H", redDelicious: "06", mcintosh: "11", oranges: "9", pears: "4", lemons: "1" },
+  { year: "I", redDelicious: "10", mcintosh: "13", oranges: "9", pears: "5", lemons: "1" },
+  { year: "J", redDelicious: "16", mcintosh: "19", oranges: "6", pears: "9", lemons: "1" },
+  { year: "K", redDelicious: "19", mcintosh: "17", oranges: "5", pears: "7", lemons: "1" },
+  { year: "L", redDelicious: "6", mcintosh: "12", oranges: "1", pears: "3", lemons: "1" },
+  { year: "M", redDelicious: "6", mcintosh: "12", oranges: "1", pears: "3", lemons: "1" },
+  { year: "N", redDelicious: "6", mcintosh: "12", oranges: "1", pears: "3", lemons: "1" },
+  { year: "O", redDelicious: "6", mcintosh: "12", oranges: "1", pears: "3", lemons: "1" },
+  { year: "P", redDelicious: "6", mcintosh: "12", oranges: "1", pears: "3", lemons: "1" },
 ];
 
 var parse = d3.time.format("%Y").parse;
@@ -240,11 +244,15 @@ legend.append("text")
   .style("text-anchor", "start")
   .text(function(d, i) { 
     switch (i) {
-      case 0: return "Anjou pears";
-      case 1: return "Naval oranges";
-      case 2: return "McIntosh apples";
-      case 3: return "Red Delicious apples";
-      case 4: return "Lemons";
+      case 0: return "Ages 0-9";
+      case 1: return "Ages 10-19";
+      case 2: return "Ages 20-29";
+      case 3: return "Ages 30-39";
+      case 4: return "Ages 40-49";
+      case 5: return "Ages 50-59";
+      case 6: return "Ages 60-69";
+      case 7: return "Ages 70-79";
+      case 8: return "Ages 80+";
     }
   });
 
