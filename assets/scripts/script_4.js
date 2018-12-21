@@ -11,6 +11,7 @@ var svg = d3.select("#stacked")
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+   .call(stacked);
 
 
 /* Data in strings like it would be if imported from a csv */
