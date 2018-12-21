@@ -135,29 +135,26 @@ var svg = d3.select("body")
 /* Data in strings like it would be if imported from a csv */
 
 var data = [
-  { year: "A", redDelicious: "10", mcintosh: "15", oranges: "9", pears: "6", lemons: "1" },
-  { year: "B", redDelicious: "12", mcintosh: "18", oranges: "9", pears: "4", lemons: "1" },
-  { year: "C", redDelicious: "05", mcintosh: "20", oranges: "8", pears: "2", lemons: "1" },
-  { year: "D", redDelicious: "01", mcintosh: "15", oranges: "5", pears: "4", lemons: "1" },
-  { year: "E", redDelicious: "02", mcintosh: "10", oranges: "4", pears: "2", lemons: "1" },
-  { year: "F", redDelicious: "03", mcintosh: "12", oranges: "6", pears: "3", lemons: "1" },
-  { year: "G", redDelicious: "04", mcintosh: "15", oranges: "8", pears: "1", lemons: "1" },
-  { year: "H", redDelicious: "06", mcintosh: "11", oranges: "9", pears: "4", lemons: "1" },
-  { year: "I", redDelicious: "10", mcintosh: "13", oranges: "9", pears: "5", lemons: "1" },
-  { year: "J", redDelicious: "16", mcintosh: "19", oranges: "6", pears: "9", lemons: "1" },
-  { year: "K", redDelicious: "19", mcintosh: "17", oranges: "5", pears: "7", lemons: "1" },
-  { year: "L", redDelicious: "6", mcintosh: "12", oranges: "1", pears: "3", lemons: "1" },
-  { year: "M", redDelicious: "6", mcintosh: "12", oranges: "1", pears: "3", lemons: "1" },
-  { year: "N", redDelicious: "6", mcintosh: "12", oranges: "1", pears: "3", lemons: "1" },
-  { year: "O", redDelicious: "6", mcintosh: "12", oranges: "1", pears: "3", lemons: "1" },
-  { year: "P", redDelicious: "6", mcintosh: "12", oranges: "1", pears: "3", lemons: "1" },
+  { year: "A", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "B", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "C", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "D", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "E", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "F", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "G", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "H", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "I", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "J", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "K", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "L", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
+  { year: "M", a0: "10", a1: "15", a2: "9", a3: "6", a4: "1" , a5: "10", a6: "15", a7: "9", a8: "6"},
 ];
 
 var parse = d3.time.format("%Y").parse;
 
 
 // Transpose the data into layers
-var dataset = d3.layout.stack()(["redDelicious", "mcintosh", "oranges", "pears", "lemons"].map(function(fruit) {
+var dataset = d3.layout.stack()(["a0", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"].map(function(fruit) {
   return data.map(function(d) {
     return {x: parse(d.year), y: +d[fruit]};
   });
@@ -173,7 +170,7 @@ var y = d3.scale.linear()
   .domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; });  })])
   .range([height, 0]);
 
-var colors = ["b33040", "#d25c4d", "#f2b447", "#d9d574", "#fff5a3"];
+var colors = ["#DE5CFF", "#C25FF4", "#A663EA", "#8A67E0", "#6F6BD6", "#536FCB", "#3773C1", "#1B77B7", "#007BAD"];
 
 
 // Define and draw axes
