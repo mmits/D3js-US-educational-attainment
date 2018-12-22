@@ -17,7 +17,7 @@ var tip = d3.tip()
 var arc = d3.svg.arc()
   .innerRadius(innerRadius)
   .outerRadius(function (d) { 
-    return (radius - innerRadius) * (d.data.score / 100.0) + innerRadius; 
+    return (radius - innerRadius) * (d.data.score / 50.0) + innerRadius; 
   });
 
 var outlineArc = d3.svg.arc()
