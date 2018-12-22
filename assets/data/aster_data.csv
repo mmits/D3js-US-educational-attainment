@@ -1,5 +1,5 @@
 "id","order","score","weight","color","label"
-"QA",2,23,2.5,"#FFBF14","First Quarter"
+"QA",1,23,2.5,"#FFBF14","First Quarter"
 "QB",4,21,2.5,"#CA7F29","Second Quarter"
 "QC",6,20,2.5,"#953F3E","Third Quarter"
 "QD",8,21,2.5,"#610054","Fourth Quarter"
