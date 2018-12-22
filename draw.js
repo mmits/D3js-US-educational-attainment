@@ -14,7 +14,6 @@ var tip = d3.tip()
     return d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span>";
   });
 
-
 var arc = d3.svg.arc()
   .innerRadius(innerRadius)
   .outerRadius(function (d) { 
