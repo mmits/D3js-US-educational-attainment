@@ -1,6 +1,6 @@
 var width = 500,
     height = 500,
-    radius = Math.min(width, height),
+    radius = Math.min(width, height)/2,
     innerRadius = 0.3 * radius;
 
 var pie = d3.layout.pie()
